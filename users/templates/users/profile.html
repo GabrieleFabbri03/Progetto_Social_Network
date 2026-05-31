@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Profilo di {{ profile_user.username }}</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { margin-top: 0; color: #333; }
+        .bio { font-style: italic; color: #666; margin: 15px 0; }
+        .stats { display: flex; gap: 20px; font-weight: bold; color: #3b71b9; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>@{{ profile_user.username }}</h1>
+        <p><strong>Nome:</strong> {{ profile_user.first_name|default:"Non specificato" }}</p>
+        <p><strong>Email:</strong> {{ profile_user.email }}</p>
+
+        <p class="bio"><strong>Bio:</strong> {{ profile.bio|default:"Nessuna biografia inserita." }}</p>
+
+        <div class="stats">
+            <span>Seguiti: {{ profile.follows.count }}</span>
+            <span>Follower: {{ profile.followed_by.count }}</span>
+        </div>
+    </div>
+
+</body>
+</html>
