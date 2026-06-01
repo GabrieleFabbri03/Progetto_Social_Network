@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrati</title>
+    <style>
+        body { font-family: sans-serif; max-width: 400px; margin: 80px auto; padding: 20px; background: #f4f4f4; }
+        .register-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h2 { margin-top: 0; color: #333; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ddd; border-radius: 4px; }
+        .btn { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        .btn:hover { background: #218838; }
+        .login-link { display: block; text-align: center; margin-top: 15px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="register-card">
+        <h2>Crea un Account</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Registrati</button>
+        </form>
+
+        <a href="{% url 'login' %}" class="login-link">Hai già un account? Accedi qui</a>
+    </div>
+
+</body>
+</html>

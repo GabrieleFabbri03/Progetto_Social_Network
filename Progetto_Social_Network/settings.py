@@ -119,3 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Dopo il logi manda utente sul suo profilo
+LOGIN_REDIRECT_URL = '/profile/admin/'
+
+# Dopo il logout manda utente alla pagina di login
+LOGOUT_REDIRECT_URL = '/login/'

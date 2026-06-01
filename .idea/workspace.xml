@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Creazione di modelli base per utenti e post">
-      <change afterPath="$PROJECT_DIR$/users/templates/users/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Aggiunta pagina profilo utente con view, url e template di base">
+      <change afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Progetto_Social_Network/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto_Social_Network/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/posts/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Progetto_Social_Network/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Progetto_Social_Network/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Progetto_Social_Network" type="Python.DjangoServer" factoryName="Django server">
       <module name="Progetto_Social_Network" />
@@ -109,7 +107,8 @@
       <option name="presentableId" value="Default" />
       <updated>1780253999746</updated>
       <workItem from="1780254000788" duration="496000" />
-      <workItem from="1780261868864" duration="1023000" />
+      <workItem from="1780261868864" duration="1184000" />
+      <workItem from="1780308435882" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione di modelli base per utenti e post">
       <option name="closed" value="true" />
@@ -119,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1780254491707</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aggiunta pagina profilo utente con view, url e template di base">
+      <option name="closed" value="true" />
+      <created>1780263041192</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780263041192</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +134,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creazione di modelli base per utenti e post" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creazione di modelli base per utenti e post" />
+    <MESSAGE value="Aggiunta pagina profilo utente con view, url e template di base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta pagina profilo utente con view, url e template di base" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
