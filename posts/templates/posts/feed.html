@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block title %}Bacheca - SocialPPM{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        
+        <h2 class="mb-4">Feed Principale</h2>
+        
+        {% for post in posts %}
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                    <a href="{% url 'profile' post.author.username %}" class="text-decoration-none fw-bold text-primary">
+                        @{{ post.author.username }}
+                    </a>
+                    <small class="text-muted">{{ post.data_creazione|date:"d M Y, H:i" }}</small>
+                </div>
+                <div class="card-body">
+                    <p class="card-text fs-5">{{ post.testo }}</p>
+                </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-info">Non ci sono ancora post. Sii il primo a scriverne uno!</div>
+        {% endfor %}
+
+        <h2 class="mb-4">Feed Principale</h2>
+
+        <div class="card mb-4 shadow-sm border-primary">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.testo }}
+                    <div class="text-end mt-2">
+                        <button type="submit" class="btn btn-primary">Pubblica</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
