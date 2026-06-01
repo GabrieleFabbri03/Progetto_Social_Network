@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Profile
@@ -44,3 +46,21 @@ def follow_user(request, username):
             mio_profilo.follows.add(user_to_follow.profile)
 
     return HttpResponseRedirect(reverse('profile', args=[username]))
+
+
+@login_required
+def ban_user(request, username):
+    # Sicurezza extra: se non sei un moderatore, ti butto fuori!
+    if not request.user.is_staff:
+        return redirect('feed')
+
+    user_to_ban = get_object_or_404(User, username=username)
+
+    # Un moderatore non può bannare se stesso
+    if request.user != user_to_ban:
+        if request.method == 'POST':
+            # Se è attivo lo spengo (Ban), se è spento lo riattivo (Unban)
+            user_to_ban.is_active = not user_to_ban.is_active
+            user_to_ban.save()
+
+    return redirect('profile', username=username)
