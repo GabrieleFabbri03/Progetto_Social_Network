@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Conferma Eliminazione{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card border-danger shadow">
+            <div class="card-header bg-danger text-white fw-bold">
+                Attenzione: Eliminazione Post
+            </div>
+            <div class="card-body text-center">
+                <p class="fs-5 mt-3">Sei sicuro di voler eliminare questo post di <strong>@{{ object.author.username }}</strong>?</p>
+                
+                <div class="p-3 bg-light border rounded text-start mb-4">
+                    <em>"{{ object.testo }}"</em>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <a href="{% url 'feed' %}" class="btn btn-secondary me-2">Annulla</a>
+                    <button type="submit" class="btn btn-danger">Sì, elimina definitivamente</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

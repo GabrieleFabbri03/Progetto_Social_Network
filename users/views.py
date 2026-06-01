@@ -4,10 +4,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from .models import Profile
+
 
 def profile_view(request, username):
     user = get_object_or_404(User, username=username)
-    profile = user.profile
+
+    profile, created = Profile.objects.get_or_create(user=user)
+
     context = {
         'profile_user': user,
         'profile': profile,

@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # Dopo il logi manda utente sul suo profilo
-LOGIN_REDIRECT_URL = '/profile/admin/'
+LOGIN_REDIRECT_URL = '/'
 
 # Dopo il logout manda utente alla pagina di login
 LOGOUT_REDIRECT_URL = '/login/'
