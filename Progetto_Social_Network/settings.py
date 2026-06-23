@@ -120,6 +120,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+LOGIN_URL = '/login/'
+
 # Dopo il logi manda utente sul suo profilo
 LOGIN_REDIRECT_URL = '/'
 
