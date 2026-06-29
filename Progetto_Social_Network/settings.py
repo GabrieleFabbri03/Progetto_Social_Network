@@ -25,6 +25,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-88p&1uuk%esh68v_$t7hl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+
+#Per far funzionare il login su Render
+CSRF_TRUSTED_ORIGINS = ['https://progetto-social-network.onrender.com']
+
 # Application definition
 
 INSTALLED_APPS = [
