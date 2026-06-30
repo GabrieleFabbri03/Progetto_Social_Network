@@ -72,8 +72,8 @@ class ProfileUpdateView(UpdateView):
     template_name = 'users/profile_edit.html'
 
     def get_object(self):
-        # Questo garantisce che un utente possa modificare SOLO la propria bio
-        return self.request.user.profile
+        profile, created = Profile.objects.get_or_create(user=self.request.user)
+        return profile
 
     def get_success_url(self):
         return reverse('profile', kwargs={'username': self.request.user.username})

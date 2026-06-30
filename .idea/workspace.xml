@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Ordinamento post decrescente, corretto link Mio Profilo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Risolto errore 500 su profili vecchi" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +118,7 @@
       <workItem from="1782758261014" duration="1058000" />
       <workItem from="1782814408641" duration="2841000" />
       <workItem from="1782818468635" duration="835000" />
-      <workItem from="1782824322739" duration="678000" />
+      <workItem from="1782824322739" duration="1847000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione di modelli base per utenti e post">
       <option name="closed" value="true" />
@@ -274,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782824599759</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Risolto errore 500 su profili vecchi">
+      <option name="closed" value="true" />
+      <created>1782825196308</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1782825196308</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +306,8 @@
     <MESSAGE value="Corretto badge moderatore" />
     <MESSAGE value="Aggiunta creazione automatica profilo" />
     <MESSAGE value="Ordinamento post decrescente, corretto link Mio Profilo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ordinamento post decrescente, corretto link Mio Profilo" />
+    <MESSAGE value="Risolto errore 500 su profili vecchi" />
+    <option name="LAST_COMMIT_MESSAGE" value="Risolto errore 500 su profili vecchi" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
