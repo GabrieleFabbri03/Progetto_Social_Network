@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Profile
+from django.views.generic import UpdateView
 
 
 def profile_view(request, username):
@@ -64,3 +65,15 @@ def ban_user(request, username):
             user_to_ban.save()
 
     return redirect('profile', username=username)
+
+class ProfileUpdateView(UpdateView):
+    model = Profile
+    fields = ['bio']
+    template_name = 'users/profile_edit.html'
+
+    def get_object(self):
+        # Questo garantisce che un utente possa modificare SOLO la propria bio
+        return self.request.user.profile
+
+    def get_success_url(self):
+        return reverse('profile', kwargs={'username': self.request.user.username})

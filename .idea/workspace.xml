@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Aggiunto STATIC_ROOT per  errore collectstatic&quot;" />
+    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Fixato errore 400 Bad Request: aggiunto ALLOWED_HOSTS e CSRF_TRUSTED_ORIGINS">
+      <change afterPath="$PROJECT_DIR$/posts/templates/posts/post_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/profile_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +121,8 @@
       <workItem from="1780925967512" duration="321000" />
       <workItem from="1782223334638" duration="4447000" />
       <workItem from="1782749570494" duration="2150000" />
-      <workItem from="1782758261014" duration="833000" />
+      <workItem from="1782758261014" duration="1058000" />
+      <workItem from="1782814408641" duration="1129000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione di modelli base per utenti e post">
       <option name="closed" value="true" />
@@ -221,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782758666500</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixato errore 400 Bad Request: aggiunto ALLOWED_HOSTS e CSRF_TRUSTED_ORIGINS">
+      <option name="closed" value="true" />
+      <created>1782759211452</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1782759211452</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +256,8 @@
     <MESSAGE value="Configurazione finale per deployment; settings,aggiornati" />
     <MESSAGE value="Correzione requirements.txt" />
     <MESSAGE value="Aggiunto STATIC_ROOT per  errore collectstatic&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto STATIC_ROOT per  errore collectstatic&quot;" />
+    <MESSAGE value="Fixato errore 400 Bad Request: aggiunto ALLOWED_HOSTS e CSRF_TRUSTED_ORIGINS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixato errore 400 Bad Request: aggiunto ALLOWED_HOSTS e CSRF_TRUSTED_ORIGINS" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

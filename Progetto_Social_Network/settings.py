@@ -125,15 +125,13 @@ STATIC_URL = 'static/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-LOGIN_URL = '/login/'
+LOGIN_URL = '/register/'
 
 # Dopo il logi manda utente sul suo profilo
 LOGIN_REDIRECT_URL = '/'
