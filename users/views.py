@@ -8,17 +8,37 @@ from django.views.generic import UpdateView
 from .models import Profile
 
 def profile_view(request, username):
-    # Trova l'utente
+    # Utente da visualizzare
     user = get_object_or_404(User, username=username)
-
-    # FIX APPLICATO: Crea il profilo al volo se non esiste (es. vecchio admin)
     profile, created = Profile.objects.get_or_create(user=user)
+
+    if request.user.is_authenticated:
+        Profile.objects.get_or_create(user=request.user)
 
     context = {
         'profile_user': user,
         'profile': profile,
     }
     return render(request, 'users/profile.html', context)
+
+
+@login_required
+def ban_user(request, username):
+    if not request.user.is_staff:
+        return redirect('feed')
+
+    user_to_ban = get_object_or_404(User, username=username)
+
+    # Un Mod non può bannare un Admin (superuser)
+    if user_to_ban.is_superuser and not request.user.is_superuser:
+        return redirect('profile', username=username)
+
+    if request.user != user_to_ban:
+        if request.method == 'POST':
+            user_to_ban.is_active = not user_to_ban.is_active
+            user_to_ban.save()
+
+    return redirect('profile', username=username)
 
 
 def register(request):
@@ -46,25 +66,6 @@ def follow_user(request, username):
             mio_profilo.follows.add(user_to_follow.profile)
 
     return HttpResponseRedirect(reverse('profile', args=[username]))
-
-
-@login_required
-def ban_user(request, username):
-    # Sicurezza extra: se non sei un moderatore, ti butto fuori!
-    if not request.user.is_staff:
-        return redirect('feed')
-
-    user_to_ban = get_object_or_404(User, username=username)
-
-    # Un moderatore non può bannare se stesso
-    if request.user != user_to_ban:
-        if request.method == 'POST':
-            # Se è attivo lo spengo (Ban), se è spento lo riattivo (Unban)
-            user_to_ban.is_active = not user_to_ban.is_active
-            user_to_ban.save()
-
-    return redirect('profile', username=username)
-
 
 class ProfileUpdateView(UpdateView):
     model = Profile
