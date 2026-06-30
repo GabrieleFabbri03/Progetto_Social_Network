@@ -33,7 +33,11 @@ Bacheca - SocialPPM
                         @{{ singolo_post.author.username }}
                     </a>
 
-                    {% if singolo_post.author.is_staff %}
+                    {% if singolo_post.author.is_superuser %}
+                        <span class="badge bg-danger ms-2">
+                            Admin
+                        </span>
+                    {% elif singolo_post.author.is_staff %}
                         <span class="badge bg-warning text-dark ms-2">
                             Mod
                         </span>
