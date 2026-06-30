@@ -1,18 +1,17 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Profile
 from django.views.generic import UpdateView
-
+from .models import Profile
 
 def profile_view(request, username):
+    # Trova l'utente
     user = get_object_or_404(User, username=username)
 
+    # FIX APPLICATO: Crea il profilo al volo se non esiste (es. vecchio admin)
     profile, created = Profile.objects.get_or_create(user=user)
 
     context = {
@@ -65,6 +64,7 @@ def ban_user(request, username):
             user_to_ban.save()
 
     return redirect('profile', username=username)
+
 
 class ProfileUpdateView(UpdateView):
     model = Profile
