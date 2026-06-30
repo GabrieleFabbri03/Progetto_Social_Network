@@ -7,20 +7,20 @@ from django.urls import reverse
 from django.views.generic import UpdateView
 from .models import Profile
 
+
 def profile_view(request, username):
-    # Utente da visualizzare
-    user = get_object_or_404(User, username=username)
-    profile, created = Profile.objects.get_or_create(user=user)
+    target_user = get_object_or_404(User, username=username)
+
+    profile, created = Profile.objects.get_or_create(user=target_user)
 
     if request.user.is_authenticated:
         Profile.objects.get_or_create(user=request.user)
 
     context = {
-        'profile_user': user,
+        'profile_user': target_user,
         'profile': profile,
     }
     return render(request, 'users/profile.html', context)
-
 
 @login_required
 def ban_user(request, username):
