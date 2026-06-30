@@ -9,6 +9,7 @@ class PostForm(forms.ModelForm):
             'testo': forms.Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'A cosa stai pensando?',
-                'rows': 3
-            })
+                'rows': 3,
+                'minlength': 5
+            }),
         }
