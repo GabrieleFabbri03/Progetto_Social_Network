@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Riorganizzata FeedView">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e2c16da3-8e49-4de1-a6e2-c618c82be4fb" name="Changes" comment="Correzione permessi mod rispetto admin" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +118,7 @@
       <workItem from="1782758261014" duration="1058000" />
       <workItem from="1782814408641" duration="2841000" />
       <workItem from="1782818468635" duration="835000" />
-      <workItem from="1782824322739" duration="2646000" />
+      <workItem from="1782824322739" duration="3047000" />
     </task>
     <task id="LOCAL-00001" summary="Creazione di modelli base per utenti e post">
       <option name="closed" value="true" />
@@ -290,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782827734294</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Correzione permessi mod rispetto admin">
+      <option name="closed" value="true" />
+      <created>1782828595211</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1782828595211</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +324,8 @@
     <MESSAGE value="Ordinamento post decrescente, corretto link Mio Profilo" />
     <MESSAGE value="Risolto errore 500 su profili vecchi" />
     <MESSAGE value="Riorganizzata FeedView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Riorganizzata FeedView" />
+    <MESSAGE value="Correzione permessi mod rispetto admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correzione permessi mod rispetto admin" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

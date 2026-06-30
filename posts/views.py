@@ -21,6 +21,17 @@ class FeedView(LoginRequiredMixin, CreateView):
         return context
 
 
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'posts/post_form.html'
+    success_url = reverse_lazy('feed')
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'posts/post_confirm_delete.html'
@@ -32,21 +43,11 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         #Se sei l'autore del post puoi sempre cancellarlo
         if self.request.user == post.author:
             return True
-        #Se sei il admin puoi cancellare tutto
+        #Se sei admin puoi cancellare tutto
         if self.request.user.is_superuser:
             return True
-        #Se sei un Moderatore puoi cancellare ma non i post del admin
+        #Se è mod puoi cancellare ma non i post dell'admin
         if self.request.user.is_staff and not post.author.is_superuser:
             return True
 
         return False
-
-class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    model = Post
-    template_name = 'posts/post_confirm_delete.html'
-    success_url = reverse_lazy('feed')
-
-    def test_func(self):
-        post = self.get_object()
-        # Permette al proprietario del post O allo staff di eliminare
-        return self.request.user == post.author or self.request.user.is_staff
